@@ -39,7 +39,7 @@ if !keyboard_check(vk_right) && !keyboard_check(vk_left)
 }
 
 
-if place_meeting(x+((grav + 1) % 2)* sign(2 - 1.1*(grav - 1 % 4)),y+((grav) % 2)* sign(2 - 1.1*(grav - 1 % 4)),oGround)
+if place_meeting(x+((grav + 1) % 2)* sign(2 - 1.1*(grav - 1 % 4)),y+((grav) % 2)* sign(2 - 1.1*(grav % 4)),oGround)
 {
 	ysp=0
 	if keyboard_check(vk_up)
@@ -47,6 +47,8 @@ if place_meeting(x+((grav + 1) % 2)* sign(2 - 1.1*(grav - 1 % 4)),y+((grav) % 2)
 		ysp=-4
 	}
 }
+
+image_angle=((grav - 1) % 4) * 90
 
 switch grav % 4
 {
@@ -82,4 +84,9 @@ if place_meeting(x,y,oObjective) && gravchanged == 0
 if !place_meeting(x,y,oObjective)
 {
 	gravchanged=0
+}
+
+if place_meeting(x,y,oWin)
+{
+	room_goto_next()
 }
