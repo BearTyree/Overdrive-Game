@@ -2,7 +2,7 @@
   "$GMHtml5Options":"",
   "%Name":"HTML5",
   "name":"HTML5",
-  "option_html5_allow_fullscreen":true,
+  "option_html5_allow_fullscreen":false,
   "option_html5_browser_title":"Overdrive Project",
   "option_html5_centregame":false,
   "option_html5_display_cursor":true,
